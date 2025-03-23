@@ -12,6 +12,11 @@ The **Collaborative Coding Application** is a real-time, AI-powered code collabo
 - Preview AI-generated code and files
 - Execute code inside the browser using WebContainers
 
+### Deployment
+- frontend - vercel
+- backend - render -
+will takes time to respond, so be patient, sry for inconvinience :) 
+
 ## Features
 - **Real-Time Collaboration**: Work with multiple developers on the same project simultaneously.
 - **AI-Assisted Coding**: Ask AI to generate and optimize code snippets.
@@ -22,7 +27,7 @@ The **Collaborative Coding Application** is a real-time, AI-powered code collabo
 
 ## App Preview
 
-![DemoApp](./frontend/public/demo.png)
+![DemoApp](./public/demo.png)
 
 ---
 
