@@ -45,13 +45,15 @@ const Home = () => {
 
   function handleLogout() {
     axios
-      .get("/logout")
+      .get("/users/logout", {
+        withCredentials: true // ✅ Required for cookies
+      })
       .then(() => {
         setUser(null);
         navigate("/");
       })
       .catch((err) => console.error("Logout failed:", err));
-  }
+}
 
   return (
     <main className="p-4 min-h-screen bg-black text-white">
