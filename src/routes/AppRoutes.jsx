@@ -6,12 +6,14 @@ import Home from '../screens/Home'
 import Project from '../screens/Project'
 import UserAuth from '../auth/UserAuth'
 import Landing from '../screens/Landing'
+import Docs from '../screens/Docs'
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
         <Routes>
             <Route path="/dashboard" element={<UserAuth><Home/></UserAuth>} />
+            <Route path="/docs" element={<Docs/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/project" element={<UserAuth><Project /></UserAuth>} />
