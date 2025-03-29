@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../context/user.context'
 import axios from '../config/axios'
+import toast from 'react-hot-toast'
 
 const Register = () => {
 
@@ -21,9 +22,11 @@ const Register = () => {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', JSON.stringify(res.data.user)); // Store user
                 setUser(res.data.user);
+                toast.success('Registration successful!');
                 navigate('/');
             })
             .catch((err) => {
+                toast.error('Registration failed!');
                 console.log(err.response.data);
             });
     }

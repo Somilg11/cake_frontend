@@ -5,6 +5,7 @@ const axiosInstance = axios.create({
     withCredentials: true,
 });
 
+// import.meta.env.VITE_API_URL?.replace(/\/$/, '')
 
 // Attach token to request headers
 axiosInstance.interceptors.request.use(

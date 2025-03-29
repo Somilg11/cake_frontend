@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../config/axios'
 import { UserContext } from '../context/user.context'
+import toast from 'react-hot-toast'
 
 const Login = () => {
 
@@ -20,10 +21,11 @@ const Login = () => {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('user', JSON.stringify(res.data.user)); // Store user
                 setUser(res.data.user);
+                toast.success('Login successful!');
                 navigate('/');
             })
             .catch((err) => {
-                console.log(err.response.data);
+                toast.error(err.response?.data?.message || "Invalid email or password");
             });
     }
 

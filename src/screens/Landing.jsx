@@ -31,8 +31,8 @@ const Landing = () => {
       )}
       
       {/* Navbar */}
-      <header id="navbar" className="flex justify-between items-center px-8 py-4 bg-transparent backdrop-blur-md fixed w-full z-10 transition-all top-10">
-        <div className="text-2xl font-bold flex items-center gap-2">
+      <header id="navbar" className="flex justify-between items-center px-4 md:px-8 py-4 bg-transparent backdrop-blur-md fixed w-full z-10 transition-all top-10">
+        <div className="text-xl md:text-2xl font-bold flex items-center gap-2">
           <CakeSlice />CAKE
         </div>
         <nav className="space-x-4 md:space-x-6 flex items-center">
@@ -47,16 +47,51 @@ const Landing = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="min-h-screen flex-grow flex flex-col gap-6 items-center justify-center text-center px-4 pt-40 bg-gradient-to-r from-purple-800 via-black to-blue-800">
-        <h1 className="text-6xl font-extrabold leading-tight">Revolutionize Your Coding with <span className="text-blue-500">CAKE</span></h1>
+      <main className="min-h-screen flex-grow flex flex-col gap-6 items-center justify-center text-center px-4 pt-40 bg-gradient-to-r from-purple-900 via-black to-blue-900">
+        <h1 className="text-5xl md:text-6xl font-semibold md:font-bold leading-tight">Revolutionize Your Coding with <span className="text-blue-500">CAKE</span></h1>
         <p className="text-lg text-gray-300 max-w-2xl">Collaborative AI-Assisted Koding Environment – The future of coding starts here.</p>
         <button onClick={handleButtonClick} className="px-5 py-2 cursor-pointer bg-white text-black text-lg font-bold rounded-lg shadow-lg transition">
           <span className='inline-flex items-center'>✨Get Started<ChevronRight/></span>
         </button>
       </main>
 
+      {/* Code reviewer */}
+      <section className="py-20 bg-gradient-to-r from-black to-gray-900 text-center px-4">
+  <h2 className="text-2xl font-bold text-white mb-8">Check Out Our New AI Code Reviewer</h2>
+  
+  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
+    {/* Code Snippet Preview */}
+    <div className="w-full md:w-1/2 bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+      <pre className="text-left text-sm text-green-400 overflow-x-auto">
+        <code>
+{`function optimizeCode(input) {
+  return AI.suggest(input);
+}`}
+        </code>
+      </pre>
+      <p className="text-gray-400 text-sm mt-3">AI-generated insights to improve your code instantly.</p>
+    </div>
+    
+    {/* Description + Button */}
+    <div className="w-full md:w-1/2 text-left">
+      <h3 className="text-2xl font-bold text-white">Smart Code Review, DEBUG</h3>
+      <p className="mt-4 text-gray-400 text-base">
+        Get AI-powered suggestions, best practices, and performance improvements for your code in real-time.
+      </p>
+      
+      {/* Button to navigate (opens in new tab) */}
+      <a href="https://debug-frontend-zeta.vercel.app/" target="_blank" rel="noopener noreferrer"
+        className="mt-6 inline-flex items-center px-2 py-1 text-sm text-black bg-white rounded-md font-bold transition-all shadow-lg">
+        🐞 Check Now
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
       {/* Features Section */}
-      <section className="py-20 bg-gray-950 text-center">
+      <section className="py-20 bg-gradient-to-r from-black to-gray-900 text-center px-5">
   <h2 className="text-4xl font-bold mb-8">Why Choose CAKE?</h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
     <div className="p-6 bg-gray-900 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-blue-900">
@@ -93,6 +128,9 @@ const Landing = () => {
         <section className="mt-8">
           <h2 className="text-3xl font-bold flex items-center gap-2"><Users /> Feel Free to Contribute</h2>
           <p className="mt-3 text-gray-300">We welcome contributions! Fork the repo, make improvements, and submit a pull request.</p>
+          <button onClick={() => window.open('https://github.com/Somilg11/cake_frontend', '_blank')} className="px-5 py-2 cursor-pointer bg-white text-black text-base font-bold rounded-lg shadow-lg transition mt-2">
+          <span className='inline-flex items-center'>✨Star Repo Now! <ChevronRight/></span>
+          </button>
         </section>
       </div>
 
@@ -106,18 +144,26 @@ const Landing = () => {
           <div>
             <h3 className="text-xl font-semibold">Resources</h3>
             <ul className="mt-2 space-y-2">
-              <li><a href="#" className="hover:text-white">GitHub Repository</a></li>
-              <li><a href="#" className="hover:text-white">API Documentation</a></li>
-              <li><a href="#" className="hover:text-white">Contributing Guide</a></li>
+              <li><a href="https://github.com/Somilg11/cake_frontend" className="hover:text-white">GitHub Repository</a></li>
+              <li><a href="/docs" className="hover:text-white">API Documentation</a></li>
+              <li><a href="/docs" className="hover:text-white">Contributing Guide</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-xl font-semibold">Connect</h3>
             <ul className="mt-2 space-y-2">
-              <li>Email: support@cake.dev</li>
-              <li>Twitter: @cake_collab</li>
-              <li>Discord: Join our community</li>
-            </ul>
+  <li>
+    <a href="mailto:gsomil93@gmail.com" className="hover:text-white">
+      Email: gsomil93@gmail.com
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/somil_1101" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+      Twitter: @somil_1101
+    </a>
+  </li>
+  <li>Discord: Join our community</li>
+</ul>
           </div>
         </div>
       </footer>
