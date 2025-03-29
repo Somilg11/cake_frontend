@@ -112,7 +112,11 @@ const Project = () => {
       if (data.sender._id == 'ai') {
         const message = JSON.parse(data.message)
         console.log(message)
-        webContainer?.mount(message.fileTree)
+        if (webContainer) {
+          webContainer.mount(message.fileTree);
+        } else {
+          console.error("WebContainer is not initialized yet.");
+        }
         if (message.fileTree) {
           setFileTree(message.fileTree || {})
         }
