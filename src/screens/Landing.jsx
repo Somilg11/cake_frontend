@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { CakeSlice, X, Code, Users, Shield, Github, Settings, ChevronRight, HelpCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/user.context';
 
 const Landing = () => {
   const [showNotification, setShowNotification] = useState(true);
-  const [user, setUser] = useState(null); // Mock user state
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
